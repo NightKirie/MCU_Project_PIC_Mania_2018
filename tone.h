@@ -33,8 +33,9 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
-#define N   0u
-#define C1  4929u
+#define N   0u      //for rest
+//for tone from C1~B8, with their cycles to match the period of the tone(8Mhz)
+#define C1  4929u   
 #define C1S 8393u
 #define D1  11481u
 #define D1S 14253u
@@ -138,7 +139,8 @@
 #define A8S 65267u
 #define B8  65282u
 
-//24 FOR 1 BEAT
+//24 for 1 beat
+//main melody
 const int sine_one_tone[] = {E6, F6S, G6, A6, B6, E7, D7,      B6, E6, B6, A6, B6, A6, G6, F6S,      E6, F6S, G6, A6, B6, A6, G6,      F6S, E6, F6S, G6, F6S, G6, F6S, E6, D6S, F6S,
                              E6, F6S, G6, A6, B6, E7, D7,      B6, E6, B6, A6, B6, A6, G6, F6S,      E6, F6S, G6, A6, B6, A6, G6,      F6S, N, G6, N, A6, N, B6, N,
                              E6, F6S, G6, A6, B6, E7, D7,      B6, E6, B6, A6, B6, A6, G6, F6S,      E6, F6S, G6, A6, B6, A6, G6,      F6S, E6, F6S, G6, F6S, G6, F6S, E6, D6S, F6S,
@@ -164,6 +166,7 @@ const char sine_one_beat[] = {12, 12, 12, 12, 24, 12, 12,      24, 24, 12, 3, 3,
                              12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,
                              12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,
                              12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 48};
+//counter melody & accompaniment(chord)
 const int sine_two_tone[] = {N,      N,      N,      N,
                              N,      N,      N,      N, A5, A5,
                              B5, D6, E6, F6S, G6, B6, A6,      G6, B5, G6, F6S, E6, D6,      C6, D6, E6, F6S, G6, F6S, E6,      D6, C6, D6, E6, N, C6S,
@@ -176,6 +179,7 @@ const int sine_two_tone[] = {N,      N,      N,      N,
                              G5, A5, B5, B5,
                              G5, A5, B5, B5,
                              G5, A5, B5, N, B5};
+//accompaniment(chord)
 const char sine_two_beat[] = {96,      96,      96,      96,
                               96,      96,      96,      48, 24, 24,
                               12, 12, 12, 12, 24, 12, 12,      24, 24, 12, 12, 12, 12,      12, 12, 12, 12, 24, 12, 12,      12, 12, 12, 12, 36, 12,
